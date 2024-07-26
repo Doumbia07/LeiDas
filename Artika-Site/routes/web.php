@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Route pour afficher les articles (accessible à tous)
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index'); // Route pour afficher la liste des articles
 Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
 
 require __DIR__.'/auth.php';

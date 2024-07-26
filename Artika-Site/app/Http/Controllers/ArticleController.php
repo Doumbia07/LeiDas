@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -31,21 +33,45 @@ class ArticleController extends Controller
         $article->save();
 
         // Sauvegarder les images si présentes
-        if($request->hasFile('images')){
+        if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imagePath = $image->store('images', 'public');
                 $article->images()->create(['path' => $imagePath]);
             }
         }
 
-        return redirect()->route('home');
+        return redirect()->route('articles.index');
     }
 
-    // Afficher un article
+    // Afficher tous les articles
+    public function index()
+    {
+        $articles = Article::with('images')->latest()->get();
+        return view('articles.index', compact('articles'));
+    }
+
+    // Afficher un article spécifique
     public function show($id)
     {
         $article = Article::findOrFail($id);
+        $article->load('images'); // Charger les images associées
         return view('articles.show', compact('article'));
     }
-}
 
+
+    // Supprimer un article
+    public function destroy($id)
+    {
+        $article = Article::findOrFail($id);
+
+        // Supprimer les images associées
+        foreach ($article->images as $image) {
+            // Supprimer le fichier image du stockage
+            Storage::disk('public')->delete($image->path);
+            $image->delete();
+        }
+
+        $article->delete();
+        return redirect()->route('articles.index');
+    }
+}
