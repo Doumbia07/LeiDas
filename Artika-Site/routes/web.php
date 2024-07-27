@@ -18,19 +18,18 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // Routes pour créer et stocker les articles (seulement pour les utilisateurs authentifiés)
     Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
     Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store');
 });
 
-// Route pour afficher les articles (accessible à tous)
-Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index'); // Route pour afficher la liste des articles
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
 
-// Route pour afficher le formulaire de contact
 Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
-
-// Route pour envoyer le formulaire de contact
 Route::post('/contact', [ContactController::class, 'sendMail'])->name('contact.send');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 
 require __DIR__.'/auth.php';

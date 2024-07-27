@@ -44,9 +44,18 @@ class ArticleController extends Controller
     }
 
     // Afficher tous les articles
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::with('images')->latest()->get();
+        $search = $request->input('search');
+
+        $articles = Article::with('images')
+            ->when($search, function ($query, $search) {
+                return $query->where('title', 'like', "%{$search}%")
+                             ->orWhere('description', 'like', "%{$search}%");
+            })
+            ->latest()
+            ->get();
+
         return view('articles.index', compact('articles'));
     }
 
@@ -57,7 +66,6 @@ class ArticleController extends Controller
         $article->load('images'); // Charger les images associées
         return view('articles.show', compact('article'));
     }
-
 
     // Supprimer un article
     public function destroy($id)
