@@ -30,6 +30,12 @@
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
                         {{ __('À propos') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('testimonials')" :active="request()->routeIs('testimonials')">
+                        {{ __('Témoignages') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('faq')" :active="request()->routeIs('faq')">
+                        {{ __('FAQ') }}
+                    </x-nav-link>
                 </div>
             </div>
 

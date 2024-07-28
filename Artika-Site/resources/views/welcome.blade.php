@@ -16,39 +16,50 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
         }
+
         .scale-up {
             transition: transform 0.3s;
         }
+
         .scale-up:hover {
             transform: scale(1.05);
         }
+
         .header {
             background: linear-gradient(to right, #f7f7f7, #ffffff);
         }
+
         .hero {
             background: linear-gradient(to right, #ffffff, #f7f7f7);
             color: #333;
         }
+
         .hero h1 {
             color: #333;
         }
+
         .hero a {
             background: #f59e0b;
             color: #fff;
         }
+
         .hero a:hover {
             background: #d97706;
         }
+
         .footer {
             background: #1f2937;
         }
+
         .footer a {
             color: #e5e7eb;
         }
+
         .footer a:hover {
             color: #fbbf24;
         }
@@ -63,14 +74,14 @@
                 <img src="/logo/IMG_8766.PNG" alt="Artika Online Logo" class="h-12 mr-2">
                 <span class="text-yellow-500 text-xl"></span>
             </div>
-            <nav class="ml-10">
-                <ul class="flex space-x-4">
+           {{--<nav class="ml-10">
+              <ul class="flex space-x-4">
                     <li><a href="/" class="hover:text-yellow-500 text-gray-500">Accueil</a></li>
-                    <li><a href="/articles" class="hover:text-yellow-500 text-gray-500">Articles</a></li>
+                    <li><a href="{{ route('articles.index') }}" class="hover:text-yellow-500 text-gray-500">Articles</a></li>
                     <li><a href="/artisans" class="hover:text-yellow-500 text-gray-500">Artisans</a></li>
-                    <li><a href="/a-propos" class="hover:text-yellow-500 text-gray-500">A propos</a></li>
+                    <li><a href="/a-propos" class="hover:text-yellow-500 text-gray-500">À propos</a></li>
                 </ul>
-            </nav>
+            </nav>-->--}}
         </div>
         <div class="flex items-center space-x-6">
             <!-- Connexion et Inscription -->
@@ -89,14 +100,14 @@
             Bienvenue sur <span class="text-yellow-500">Artika Online</span>
         </h1>
         <p class="text-gray-600 text-lg mt-2 fade-in">L'univers des artisans.</p>
-        <a href="/articles" class="inline-block mt-6 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-lg text-gray-900 font-semibold rounded-lg transition-colors duration-300 fade-in">
+        <a href="/login" class="inline-block mt-6 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-lg text-white font-semibold rounded-lg transition-colors duration-300 fade-in">
             Découvrir les articles
         </a>
     </div>
 
     <!-- Articles Section -->
-    <div class="container mx-auto py-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="container mx-auto py-12 px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Article 1 -->
             <div class="bg-white p-6 rounded-lg shadow-md scale-up">
                 <img src="image1.jpg" alt="Article 1" class="w-full h-48 object-cover rounded-t-lg">
@@ -127,7 +138,6 @@
                 <img src="image6.jpg" alt="Article 6" class="w-full h-48 object-cover rounded-t-lg">
                 <h2 class="text-lg font-semibold text-gray-800 mt-4">Titre de l'article 6</h2>
             </div>
-
         </div>
     </div>
 
@@ -139,7 +149,7 @@
                 <a href="https://www.twitter.com" class="text-gray-400 hover:text-yellow-500"><i class="fab fa-twitter text-2xl"></i></a>
                 <a href="https://www.instagram.com" class="text-gray-400 hover:text-yellow-500"><i class="fab fa-instagram text-2xl"></i></a>
                 <a href="https://www.linkedin.com" class="text-gray-400 hover:text-yellow-500"><i class="fab fa-linkedin-in text-2xl"></i></a>
-                <a href="mailto:artikaonilne@gmail.com" class="text-gray-400 hover:text-yellow-500"><i class="fas fa-envelope text-2xl"></i></a>
+                <a href="mailto:artikaonline@gmail.com" class="text-gray-400 hover:text-yellow-500"><i class="fas fa-envelope text-2xl"></i></a>
             </div>
             <p class="text-gray-400">© 2024 Artika Online. Tous droits réservés.</p>
         </div>

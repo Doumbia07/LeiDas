@@ -4,6 +4,8 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\FaqController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,5 +37,11 @@ Route::get('/about', function () {
 Route::get('/services', function () {
     return view('services');
 })->name('services');
+
+// Route pour la page des témoignages
+Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials');
+
+Route::get('/faq', [FaqController::class, 'index'])->name('faq');
+
 
 require __DIR__.'/auth.php';
