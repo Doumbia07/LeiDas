@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title'); // Titre de l'article
             $table->text('description'); // Description de l'article
+            $table->string('city'); // Ville de l'artisan
+            $table->string('job'); // Métier de l'artisan
+            $table->string('phone'); // Numéro de téléphone de l'artisan
             $table->unsignedBigInteger('user_id'); // ID de l'utilisateur qui a créé l'article
             $table->timestamps();
 

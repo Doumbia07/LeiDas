@@ -22,6 +22,9 @@ class ArticleController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
+            'city' => 'required|string|max:255',
+            'job' => 'required|string|max:255',
+            'phone' => 'required|string|max:15',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
@@ -29,6 +32,9 @@ class ArticleController extends Controller
         $article = new Article();
         $article->title = $request->title;
         $article->description = $request->description;
+        $article->city = $request->city;
+        $article->job = $request->job;
+        $article->phone = $request->phone;
         $article->user_id = auth()->id();
         $article->save();
 
@@ -51,7 +57,10 @@ class ArticleController extends Controller
         $articles = Article::with('images')
             ->when($search, function ($query, $search) {
                 return $query->where('title', 'like', "%{$search}%")
-                             ->orWhere('description', 'like', "%{$search}%");
+                             ->orWhere('description', 'like', "%{$search}%")
+                             ->orWhere('city', 'like', "%{$search}%")
+                             ->orWhere('job', 'like', "%{$search}%")
+                             ->orWhere('phone', 'like', "%{$search}%");
             })
             ->latest()
             ->get();

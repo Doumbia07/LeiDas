@@ -16,6 +16,18 @@
                 <textarea name="description" class="form-control" id="description" rows="4" required></textarea>
             </div>
             <div class="form-group mb-3">
+                <label for="city" class="form-label">Ville</label>
+                <input type="text" name="city" class="form-control" id="city" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="job" class="form-label">Métier</label>
+                <input type="text" name="job" class="form-control" id="job" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="phone" class="form-label">Numéro de téléphone</label>
+                <input type="text" name="phone" class="form-control" id="phone" required>
+            </div>
+            <div class="form-group mb-3">
                 <label for="images" class="form-label">Images</label>
                 <input type="file" name="images[]" class="form-control-file" id="images" multiple onchange="previewImages()">
             </div>

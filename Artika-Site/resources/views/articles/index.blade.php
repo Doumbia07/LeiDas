@@ -28,6 +28,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $article->title }}</h5>
                         <p class="card-text">{{ Str::limit($article->description, 100) }}</p>
+                        <p class="card-text"><strong>Ville:</strong> {{ $article->city }}</p>
+                        <p class="card-text"><strong>Métier:</strong> {{ $article->job }}</p>
+                        <p class="card-text"><strong>Téléphone:</strong> {{ $article->phone }}</p>
                         <a href="{{ route('articles.show', $article->id) }}" class="btn btn-primary">Voir plus</a>
                     </div>
                 </div>
