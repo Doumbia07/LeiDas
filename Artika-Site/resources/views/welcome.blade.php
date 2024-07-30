@@ -79,7 +79,7 @@
                     <li><a href="/" class="hover:text-yellow-500 text-gray-500">Accueil</a></li>
                     <li><a href="{{ route('articles.index') }}" class="hover:text-yellow-500 text-gray-500">Articles</a></li>
                     <li><a href="/artisans" class="hover:text-yellow-500 text-gray-500">Artisans</a></li>
-                    <li><a href="/a-propos" class="hover:text-yellow-500 text-gray-500">À propos</a></li>
+                    <li><a href="/faq" class="hover:text-yellow-500 text-gray-500">À propos</a></li>
                 </ul>
             </nav>
         </div>
