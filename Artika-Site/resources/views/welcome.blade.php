@@ -35,7 +35,7 @@
         }
 
         .hero {
-            background: linear-gradient(to right, #ffffff, #f7f7f7);
+            background: url('{{ asset('image/pagefond.jpg') }}') no-repeat center center/cover;
             color: #333;
         }
 
@@ -71,17 +71,17 @@
     <header class="flex items-center justify-between py-3 px-6 border-b border-gray-100 header shadow-sm">
         <div class="flex items-center">
             <div class="text-gray-800 font-semibold flex items-center">
-                <img src="/logo/IMG_8766.PNG" alt="Artika Online Logo" class="h-12 mr-2">
+                <img src="{{ asset('logo/logoartika.png') }}" alt="Artika Online Logo" class="h-12 mr-2">
                 <span class="text-yellow-500 text-xl"></span>
             </div>
-           {{--<nav class="ml-10">
-              <ul class="flex space-x-4">
+            <nav class="ml-10">
+                <ul class="flex space-x-4">
                     <li><a href="/" class="hover:text-yellow-500 text-gray-500">Accueil</a></li>
                     <li><a href="{{ route('articles.index') }}" class="hover:text-yellow-500 text-gray-500">Articles</a></li>
                     <li><a href="/artisans" class="hover:text-yellow-500 text-gray-500">Artisans</a></li>
                     <li><a href="/a-propos" class="hover:text-yellow-500 text-gray-500">À propos</a></li>
                 </ul>
-            </nav>-->--}}
+            </nav>
         </div>
         <div class="flex items-center space-x-6">
             <!-- Connexion et Inscription -->
@@ -96,48 +96,52 @@
 
     <!-- Hero Section -->
     <div class="w-full text-center py-32 hero">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold fade-in">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold fade-in text-white">
             Bienvenue sur <span class="text-yellow-500">Artika Online</span>
         </h1>
-        <p class="text-gray-600 text-lg mt-2 fade-in">L'univers des artisans.</p>
-        <a href="/login" class="inline-block mt-6 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-lg text-white font-semibold rounded-lg transition-colors duration-300 fade-in">
+        <p class="text-gray-600 text-lg mt-2 fade-in text-white font-bold">L'univers des artisans.</p>
+        <a href="/register" class="inline-block mt-6 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-lg text-white font-semibold rounded-lg transition-colors duration-300 fade-in">
             Découvrir les articles
         </a>
     </div>
+
+
+
 
     <!-- Articles Section -->
     <div class="container mx-auto py-12 px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Article 1 -->
             <div class="bg-white p-6 rounded-lg shadow-md scale-up">
-                <img src="image1.jpg" alt="Article 1" class="w-full h-48 object-cover rounded-t-lg">
-                <h2 class="text-lg font-semibold text-gray-800 mt-4">Titre de l'article 1</h2>
+                <img src="{{ asset('image/image1.jpeg') }}" alt="Article 1" class="w-full h-48 object-cover rounded-t-lg">
+                <h2 class="text-lg font-semibold text-gray-800 mt-4">Ingénieur Mécanicien</h2>
             </div>
             <!-- Article 2 -->
             <div class="bg-white p-6 rounded-lg shadow-md scale-up">
-                <img src="image2.jpg" alt="Article 2" class="w-full h-48 object-cover rounded-t-lg">
+                <img src="{{ asset('image/image2.jpg') }}" alt="Article 2" class="w-full h-48 object-cover rounded-t-lg">
                 <h2 class="text-lg font-semibold text-gray-800 mt-4">Titre de l'article 2</h2>
             </div>
             <!-- Article 3 -->
             <div class="bg-white p-6 rounded-lg shadow-md scale-up">
-                <img src="image3.jpg" alt="Article 3" class="w-full h-48 object-cover rounded-t-lg">
+                <img src="{{ asset('image/image3.jpg') }}" alt="Article 3" class="w-full h-48 object-cover rounded-t-lg">
                 <h2 class="text-lg font-semibold text-gray-800 mt-4">Titre de l'article 3</h2>
             </div>
             <!-- Article 4 -->
             <div class="bg-white p-6 rounded-lg shadow-md scale-up">
-                <img src="image4.jpg" alt="Article 4" class="w-full h-48 object-cover rounded-t-lg">
-                <h2 class="text-lg font-semibold text-gray-800 mt-4">Titre de l'article 4</h2>
+                <img src="{{ asset('image/image.jpg') }}" alt="Article 3" class="w-full h-48 object-cover rounded-t-lg">
+                <h2 class="text-lg font-semibold text-gray-800 mt-4">Titre de l'article 3</h2>
             </div>
             <!-- Article 5 -->
             <div class="bg-white p-6 rounded-lg shadow-md scale-up">
-                <img src="image5.jpg" alt="Article 5" class="w-full h-48 object-cover rounded-t-lg">
-                <h2 class="text-lg font-semibold text-gray-800 mt-4">Titre de l'article 5</h2>
+                <img src="{{ asset('image/image.jpg') }}" alt="Article 3" class="w-full h-48 object-cover rounded-t-lg">
+                <h2 class="text-lg font-semibold text-gray-800 mt-4">Titre de l'article 3</h2>
             </div>
             <!-- Article 6 -->
             <div class="bg-white p-6 rounded-lg shadow-md scale-up">
-                <img src="image6.jpg" alt="Article 6" class="w-full h-48 object-cover rounded-t-lg">
-                <h2 class="text-lg font-semibold text-gray-800 mt-4">Titre de l'article 6</h2>
+                <img src="{{ asset('image/image.jpg') }}" alt="Article 3" class="w-full h-48 object-cover rounded-t-lg">
+                <h2 class="text-lg font-semibold text-gray-800 mt-4">Titre de l'article 3</h2>
             </div>
+
         </div>
     </div>
 
