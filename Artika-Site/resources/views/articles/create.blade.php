@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="d-flex justify-content-center align-items-center min-vh-100" style="background-color: #1b0356;">
+<div class="d-flex justify-content-center align-items-center min-vh-100" style="background-color: #c46620;">
     <div class="w-100" style="max-width: 600px; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
         <h1 class="text-center mb-4">Publier un nouvel article</h1>
 

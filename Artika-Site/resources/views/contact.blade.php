@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-5" style="background-color: #1b0356;">
+<div class="container py-5" style="background-color: #c46620;">
     <div class="card mx-auto shadow" style="max-width: 600px; border-radius: 10px;">
         <div class="card-body p-5">
             <h1 class="text-center mb-5">Contactez un Artisan</h1>
