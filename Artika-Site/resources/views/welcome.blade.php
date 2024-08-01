@@ -7,6 +7,7 @@
     <title>Artika Online</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="{{ asset('logoartika.png') }}" type="image/png">
     <style>
         .fade-in {
             animation: fadeIn 1s ease-in-out;
@@ -74,14 +75,7 @@
                 <img src="{{ asset('logo/logoartika.png') }}" alt="Artika Online Logo" class="h-12 mr-2">
                 <span class="text-yellow-500 text-xl"></span>
             </div>
-            <nav class="ml-10">
-                <ul class="flex space-x-4">
-                    <li><a href="/" class="hover:text-yellow-500 text-gray-500">Accueil</a></li>
-                    <li><a href="/articles" class="hover:text-yellow-500 text-gray-500">Articles</a></li>
-                    <li><a href="/artisans" class="hover:text-yellow-500 text-gray-500">Artisans</a></li>
-                    <li><a href="/faq" class="hover:text-yellow-500 text-gray-500">À propos</a></li>
-                </ul>
-            </nav>
+
         </div>
         <div class="flex items-center space-x-6">
             <!-- Connexion et Inscription -->

@@ -12,4 +12,16 @@ class ArtisanController extends Controller
         $artisans = Artisan::all();
         return view('artisans.index', compact('artisans'));
     }
+
+    public function search(Request $request)
+{
+    $query = $request->input('query');
+    $artisans = Artisan::where('Nom', 'LIKE', "%{$query}%")
+        ->orWhere('Ville', 'LIKE', "%{$query}%")
+        ->orWhere('Competences', 'LIKE', "%{$query}%")
+        ->get();
+
+    return view('search_results', compact('artisans'));
+}
+
 }

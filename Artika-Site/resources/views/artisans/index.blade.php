@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artisans</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="{{ asset('logoartika.png') }}" type="image/png">
     <style>
         body {
             background-color: #f8f9fa;
@@ -58,6 +59,13 @@
     </style>
 </head>
 <body>
+    <div class="container mt-4">
+        <form action="{{ route('search') }}" method="GET" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="query" class="form-control" placeholder="Rechercher un artisan par compétence ou ville..." required>
+                <button class="btn btn-primary" type="submit">Rechercher</button>
+            </div>
+        </form>
     <div class="container mt-4">
         <h1>Liste des Artisans</h1>
         <table class="table table-striped">
