@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Str;
+$DATABASE_URL = parse_url(env('DATABASE_URL'));
 
 return [
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     'connections' => [
 
@@ -77,19 +78,18 @@ return [
         ],
 
         'pgsql' => [
-            'driver' => 'pgsql',
-            'url' => env('DB_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'laravel'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'search_path' => 'public',
-            'sslmode' => 'prefer',
-        ],
+    'driver' => 'pgsql',
+    'host' => $DATABASE_URL['host'] ?? env('DB_HOST', '127.0.0.1'),
+    'port' => $DATABASE_URL['port'] ?? env('DB_PORT', '5432'),
+    'database' => isset($DATABASE_URL['path']) ? ltrim($DATABASE_URL['path'], '/') : env('DB_DATABASE', 'forge'),
+    'username' => $DATABASE_URL['user'] ?? env('DB_USERNAME', 'forge'),
+    'password' => $DATABASE_URL['pass'] ?? env('DB_PASSWORD', ''),
+    'charset' => 'utf8',
+    'prefix' => '',
+    'prefix_indexes' => true,
+    'schema' => 'public',
+    'sslmode' => 'prefer',
+],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
