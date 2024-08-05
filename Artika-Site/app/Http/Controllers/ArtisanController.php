@@ -14,14 +14,27 @@ class ArtisanController extends Controller
     }
 
     public function search(Request $request)
-{
-    $query = $request->input('query');
-    $artisans = Artisan::where('Nom', 'LIKE', "%{$query}%")
-        ->orWhere('Ville', 'LIKE', "%{$query}%")
-        ->orWhere('Competences', 'LIKE', "%{$query}%")
-        ->get();
+    {
+        $query = $request->input('query');
+        $keywords = explode(' ', $query);
 
-    return view('search_results', compact('artisans'));
-}
+        $artisans = Artisan::query();
+
+        foreach ($keywords as $keyword) {
+            $soundex = soundex($keyword);
+            $keywordWithWildcards = '%' . $keyword . '%';
+
+            $artisans->where(function($q) use ($keywordWithWildcards, $soundex) {
+                $q->where('Competences', 'LIKE', $keywordWithWildcards)
+                  ->orWhere('Ville', 'LIKE', $keywordWithWildcards)
+                  ->orWhereRaw("SOUNDEX(Competences) = ?", [$soundex])
+                  ->orWhereRaw("SOUNDEX(Ville) = ?", [$soundex]);
+            });
+        }
+
+        $artisans = $artisans->get();
+
+        return view('search_results', compact('artisans'));
+    }
 
 }
