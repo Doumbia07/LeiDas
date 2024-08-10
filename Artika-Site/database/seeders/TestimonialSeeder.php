@@ -16,19 +16,19 @@ class TestimonialSeeder extends Seeder
         // Insère des témoignages dans la table 'testimonials'
         DB::table('testimonials')->insert([
             [
-                'author' => 'Jean Dupont', // Nom de l'auteur du témoignage
+                'author' => 'Koffi Matial', // Nom de l'auteur du témoignage
                 'content' => 'Excellent service, très satisfait !', // Contenu du témoignage
                 'created_at' => now(), // Date et heure de création du témoignage
                 'updated_at' => now(), // Date et heure de la dernière mise à jour du témoignage
             ],
             [
-                'author' => 'Marie Curie', // Nom de l'auteur du témoignage
+                'author' => 'Traoré Mariam', // Nom de l'auteur du témoignage
                 'content' => 'Un artisan très professionnel et efficace.', // Contenu du témoignage
                 'created_at' => now(), // Date et heure de création du témoignage
                 'updated_at' => now(), // Date et heure de la dernière mise à jour du témoignage
             ],
             [
-                'author' => 'Paul Martin', // Nom de l'auteur du témoignage
+                'author' => 'Trabi Lou', // Nom de l'auteur du témoignage
                 'content' => 'Les résultats sont au-delà de mes attentes.', // Contenu du témoignage
                 'created_at' => now(), // Date et heure de création du témoignage
                 'updated_at' => now(), // Date et heure de la dernière mise à jour du témoignage

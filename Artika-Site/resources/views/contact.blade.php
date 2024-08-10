@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-5" style="background-color: #c46620;">
+<div class="container py-5" style="background-color: #090808;">
     <div class="card mx-auto shadow" style="max-width: 600px; border-radius: 10px;">
-        <div class="card-body p-5">
-            <h1 class="text-center mb-5">Contactez un Artisan</h1>
+        <div class="w-100" style="max-width: 600px; background-color: rgba(252, 110, 8, 0.913); padding: 40px; border-radius: 12px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);>
+            <h1 class="text-center mb-4" style="color: #333;">Contactez un Artisan</h1>
 
             @if (session('success'))
                 <div class="alert alert-success">

@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container mx-auto py-8">
-    <h1 class="text-3xl font-bold mb-6 text-center">Questions Fréquemment Posées (FAQ)</h1>
+    <h1 class="text-3xl font-bold mb-6 text-center">Comment fonctionne Artika Online ?</h1>
 
     <div class="bg-white p-6 rounded-lg shadow-md">
         <h2 class="text-xl font-semibold mb-4">Comment publier un article ?</h2>

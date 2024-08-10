@@ -15,10 +15,11 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
          <!-- Bootstrap CSS -->
 
-    <!-- Votre CSS personnalisé -->
+    <!--CSS personnalisé -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -45,6 +46,6 @@
                 <p class="text-gray-500 dark:text-gray-400">&copy; {{ date('Y') }} {{ config('app.name', 'Artika Online') }}. All rights reserved.</p>
             </div>
         </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     </body>
-
 </html>
